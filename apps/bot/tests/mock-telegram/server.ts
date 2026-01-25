@@ -77,23 +77,7 @@ function getChat(token: string) {
   };
 }
 
-function handleGetMe(req: Request): Response {
-  const url = new URL(req.url);
-  const token = url.searchParams.get('token') || '';
-
-  const botInfo = {
-    id: 123456789,
-    is_bot: true,
-    first_name: 'Test Bot',
-    username: 'test_bot',
-  };
-
-  return new Response(JSON.stringify(botInfo), {
-    headers: { 'Content-Type': 'application/json' },
-  });
-}
-
-function handleSendMessage(req: Request): Response {
+async function handleSendMessage(req: Request): Promise<Response> {
   const url = new URL(req.url);
   const token = url.searchParams.get('token') || '';
 
@@ -160,7 +144,7 @@ function handleGetFile(req: Request): Response {
   );
 }
 
-function handleSendDocument(req: Request): Response {
+async function handleSendDocument(req: Request): Promise<Response> {
   const url = new URL(req.url);
   const token = url.searchParams.get('token') || '';
 
@@ -184,7 +168,7 @@ function handleSendDocument(req: Request): Response {
   });
 }
 
-function handleAnswerCallbackQuery(req: Request): Response {
+async function handleAnswerCallbackQuery(req: Request): Promise<Response> {
   const url = new URL(req.url);
   const token = url.searchParams.get('token') || '';
 
@@ -231,7 +215,7 @@ function handleGetChat(req: Request): Response {
   );
 }
 
-function handleWebhook(req: Request): Response {
+async function handleWebhook(req: Request): Promise<Response> {
   const url = new URL(req.url);
   const token = url.pathname.split('/').pop();
 
@@ -323,8 +307,11 @@ async function handler(req: Request): Promise<Response> {
   }
 
   if (req.method === 'POST') {
+    if (pathname.startsWith('/sendMessage')) {
+      return await handleSendMessage(req);
+    }
     if (pathname.startsWith('/sendDocument')) {
-      return handleSendDocument(req);
+      return await handleSendDocument(req);
     }
   }
 
@@ -334,7 +321,7 @@ async function handler(req: Request): Promise<Response> {
   });
 }
 
-function generateMockToken(): string {
+export function generateMockToken(): string {
   const config: BotConfig = {
     token: 'mock_token',
     allowedUserIds: [123456789],
