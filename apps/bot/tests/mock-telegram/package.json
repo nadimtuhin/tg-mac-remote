@@ -1,0 +1,10 @@
+{
+  "name": "@tg-mac-remote/mock-telegram",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "start": "bun run server.ts",
+    "dev": "bun --watch run server.ts"
+  }
+}
