@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+bun.lockb
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist
+build
+out
+.next
+.turbo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Generated files
+*.min.js
+*.min.css
+
+# Cache
+.cache
+*.log
+.eslintcache
+
+# Lock files
+*.lock
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
