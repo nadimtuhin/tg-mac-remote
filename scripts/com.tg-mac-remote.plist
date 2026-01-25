@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.tg-mac-remote</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/nadimtuhin/opensource/tg-mac-remote/apps/bot/dist/index.js</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/nadimtuhin/Library/Logs/tg-mac-remote/stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/nadimtuhin/Library/Logs/tg-mac-remote/stderr.log</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/nadimtuhin/opensource/tg-mac-remote</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>NODE_ENV</key>
+        <string>production</string>
+    </dict>
+</dict>
+</plist>
