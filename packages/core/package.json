@@ -1,0 +1,20 @@
+{
+  "name": "@tg-mac-remote/core",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Core package for tg-mac-remote - provides bot, config, auth, and logging utilities",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "grammy": "^1.21.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}
