@@ -1,0 +1,23 @@
+{
+  "name": "@tg-mac-remote/webcam",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Webcam plugin for tg-mac-remote",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@tg-mac-remote/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "bun-types": "^1.1.6"
+  }
+}
